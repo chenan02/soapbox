@@ -1,1 +1,10 @@
-A bunch of channels here
+<% @channels.each do |channel| %>
+  <div class="card">
+    <%= image_tag channel.name + ".jpg", class: "card-img-top", alt: "Card image", size: "260x180" %>
+    <div class="card-block">
+      <h4 class="card-title"><%= channel.name %></h4>
+      <p class="card-text"><%= channel.description %></p>
+      <a href="#" class="btn btn-primary">Subscribe!</a>
+    </div>
+  </div>
+<% end %>
