@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :channels
   resources :posts
   resources :subscriptons
+  resources :sessions
 end
