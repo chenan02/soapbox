@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 20160815013405) do
 
   create_table "users", force: :cascade do |t|
     t.string   "phone_number"
-    t.integer  "frequency"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "password"
+    t.integer  "frequency",    default: 1
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
