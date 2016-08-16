@@ -1,9 +1,9 @@
-<%= form_for @session do |f| %>
-  <%= f.label :phone_number %>:
-  <%= f.text_field :phone_number %><br/>
+<%= form_tag(sessions_path, method: :post) do %>
+  <%= label_tag(:phone_number, "Phone number:") %>
+  <%= text_field_tag(:phone_number) %><br/>
 
-  <%= f.label :password %>:
-  <%= f.password_field :password %><br/>
+  <%= label_tag(:password, "Password:") %>
+  <%= password_field_tag(:password) %><br/>
 
-  <%= f.submit %>
+  <%= submit_tag("submit") %>
 <% end %>
