@@ -9,7 +9,7 @@ channels = {
 }
 
 users = {
-  "2483809188" => "Andrew Chen"
+  "2483809188"
 }
 
 body = get_tweet(channels["Tech"])
