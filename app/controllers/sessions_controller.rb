@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
     flash[:danger] = "Invalid credentials"
     redirect_to new_session_path
   end
+
+  def destroy
+    session[:user] = nil
+    redirect_to channels_path
+  end
 end
