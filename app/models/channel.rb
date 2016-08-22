@@ -1,7 +1,7 @@
 class Channel < ActiveRecord::Base
-  include TwitterModule
-  include TwilioModule
+  extend TwitterModule
+  extend TwilioModule
   has_many :subscriptions
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :sources
   validates_uniqueness_of :name
 end

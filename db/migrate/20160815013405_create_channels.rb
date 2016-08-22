@@ -3,6 +3,7 @@ class CreateChannels < ActiveRecord::Migration
     create_table :channels do |t|
       t.string :name, required: true
       t.text :description, required: true
+      t.string :sources, array: true, default: []
 
       t.timestamps null: false
     end
