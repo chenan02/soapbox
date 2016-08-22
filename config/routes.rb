@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :channels
   resources :posts
-  resources :subscriptons
+  resources :subscriptions
   resources :sessions
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
