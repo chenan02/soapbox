@@ -14,10 +14,10 @@ module TwilioModule
     users.each do |user|
       client.account.messages.create(
         :from => from,
-        :to => user,
+        :to => user.phone_number,
         :body => body
       )
-      puts "Sent message to #{user}"
+      puts "Sent message to #{user.phone_number}"
     end
   end
 
