@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
   def create
+    return redirect_to login_path if session[:user].nil?
     subscription = Subscription.new(
       user_id: session[:user]["id"],
       channel_id: params[:channel_id]
