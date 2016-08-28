@@ -1,0 +1,21 @@
+default: &DEFAULT
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *DEFAULT
+  database: soapbox_development
+
+test: &TEST
+  <<: *DEFAULT
+  database: soapbox_test
+
+production:
+  <<: *DEFAULT
+  database: soapbox_production
+
+cucumber:
+  <<: *TEST

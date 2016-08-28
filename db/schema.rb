@@ -13,15 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20160822231919) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "channels", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "sources",     default: [],              array: true
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "sources",     default: "--- []\n"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -29,15 +26,15 @@ ActiveRecord::Schema.define(version: 20160822231919) do
     t.integer "channel_id"
   end
 
-  add_index "posts", ["channel_id"], name: "index_posts_on_channel_id", using: :btree
+  add_index "posts", ["channel_id"], name: "index_posts_on_channel_id"
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "channel_id"
   end
 
-  add_index "subscriptions", ["channel_id"], name: "index_subscriptions_on_channel_id", using: :btree
-  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
+  add_index "subscriptions", ["channel_id"], name: "index_subscriptions_on_channel_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "phone_number"
@@ -47,7 +44,4 @@ ActiveRecord::Schema.define(version: 20160822231919) do
     t.datetime "updated_at",               null: false
   end
 
-  add_foreign_key "posts", "channels"
-  add_foreign_key "subscriptions", "channels"
-  add_foreign_key "subscriptions", "users"
 end
