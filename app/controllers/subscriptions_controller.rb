@@ -12,4 +12,9 @@ class SubscriptionsController < ApplicationController
     flash[:warning] = "Uh oh, something went wrong :("
     redirect_to channels_path
   end
+
+  def destroy
+    Subscription.find_by(user_id: session[:user]["id"], channel_id: params[:id]).destroy
+    redirect_to channels_path
+  end
 end
