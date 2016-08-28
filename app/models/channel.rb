@@ -7,7 +7,7 @@ class Channel < ActiveRecord::Base
   validates_uniqueness_of :name
 
   def send_news
-    body = self.get_tweet(["TechCrunch"])
+    body = self.get_tweet(self.sources)
     self.send_message(self.users, body)
   end
 end
