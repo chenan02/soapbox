@@ -1,13 +1,11 @@
-<nav class="navbar navbar-light bg-faded">
-  <div class="nav navbar-nav">
+<nav class="navbar navbar-light bg-faded pull-right">
+  <ul class="nav navbar-nav">
     <%= link_to "Channels", channels_path, class: "nav-item nav-link" %>
-    <a class="nav-item nav-link" href="#">Features</a>
-    <a class="nav-item nav-link" href="#">Pricing</a>
-    <a class="nav-item nav-link" href="#">About</a>
     <% if session[:user] %>
-      <%= link_to "Logout", logout_path, method: :delete, class: "nav-item nav-link" %>
+      <%= link_to "Logout", logout_path, method: :delete, class: "nav-item nav-link pull-xs-right" %>
     <% else %>
-      <%= link_to "Login", login_path, class: "nav-item nav-link" %>
+      <%= link_to "Login", login_path, class: "nav-item nav-link pull-xs-right" %>
     <% end %>
-  </div>
+    <%= link_to "Sign up", signup_path, class: "nav-item nav-link pull-xs-right" %>
+  </ul>
 </nav>
